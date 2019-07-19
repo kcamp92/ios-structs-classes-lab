@@ -26,8 +26,21 @@ fred.homePlanet = "Mars"
 ```
 
 Fix the class definition for `Giant` in the space below so that it **does** work:
+```
+class Giant {
+var name: String = "Fred"
+var weight: Double = 340.0
+var homePlanet: String = "Earth"
+}
 
-
+let fred = Giant()
+fred.name = "Brick"
+fred.weight = 999.2
+fred.homePlanet = "Mars"
+print(fred.name)
+print(fred.homePlanet)
+print(fred.weight)
+```
 ## Question 2
 
 Take a look at this struct that represents an alien:
@@ -50,8 +63,21 @@ bilbo.homePlanet = "Saturn"
 ```
 
 Change the declaration of `bilbo` so that the above three lines of code **do** work:
+```
+struct Alien {
+var name: String
+var height: Double
+var homePlanet: String
+}
+var bilbo = Alien(name: "Bilbo", height: 1.67, homePlanet: "Venus")
 
-
+bilbo.name = "Jake"
+bilbo.height = 1.42
+bilbo.homePlanet = "Saturn"
+print(bilbo.name)
+print(bilbo.height)
+print(bilbo.homePlanet)
+```
 ## Question 3
 
 Consider this bit of code that uses the `Giant` class:
@@ -64,8 +90,22 @@ jason.name = "Jason"
 ```
 
 What will the value of `edgar.name` be after those three lines of code are run? What will the value of `jason.name` be? Why?
+```
+class Giant {
+var name: String = "mike"
+var weight: Double = 180.0
+var homePlanet: String = "Earth"
+}
 
+let krystal = Giant()
+krystal.name = "krystal"
+let jason = krystal
+jason.name = "Jason"
 
+print(jason.name)
+
+the value of jasons name will be jason, because he took over krystals values after krystal took over the class Giant.
+```
 ## Question 4
 
 Given this bit of code that uses the `Alien` struct:
